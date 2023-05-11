@@ -1,0 +1,72 @@
+Первое ДЗ 
+Linux terminal (GitBash) commands
+
+1) Посмотреть где я: pwd
+
+2) Создать папку: mkdir foldername
+
+3) Зайти в папку: cd foldername
+
+4) Создать 3 папки: mkdir foldername_1 foldername_2 foldername_3
+
+5) Зайти в любоую папку: cd /diskname/foldername/
+
+6) Создать 5 файлов (3 txt, 2 json):touch home_1.txt home_2.txt home_3.txt home_1.json home_2.json
+
+7) Создать 3 папки: mkdir foldername_1 foldername_2 foldername_3
+
+8. Вывести список содержимого папки: ls -la
+
+9) + Открыть любой txt файл: vim /diskname/foldername/filename
+
+10) + написать туда что-нибудь, любой текст: i text
+
+11) + сохранить и выйти: esc, :wq, enter 
+
+12) Выйти из папки на уровень выше: cd ..
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку: mv filename_1 filename_2 /diskname/foldername/
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку: cp filename_1 filename_2 /diskname/foldername/
+
+15) Найти файл по имени: find . -name filename
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает: tail -f failname
+
+17) вывести несколько первых строк из текстового файла: head -5 filename
+
+18) вывести несколько последних строк из текстового файла: tail -5 filename
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает: less filename
+
+20) вывести дату и время: date +"%F %T"
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000
+curl 'http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000'
+1/2) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+
+отправляем запрос: curl 'http://162.55.220.72:5005/terminal-hw-request'
+приходит ответ с запросом имени и возраста
+отправляем: curl 'http://162.55.220.72:5005/get_method?name=(aleksandr)&age=(35)'
+
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+
+создаем файл: touch script.sh
+заходим в него: vim script.sh
+нажимаем "I"
+набираем:
+#!/bin/bash
+cd home_1/
+mkdir foldername_1 foldername_2 foldername_3
+cd /e/new_folder/
+touch home_5.txt home_6.txt home_7.txt home_1.json home_2.json
+mkdir foldername_4 foldername_5 foldername_6
+ls -la
+mv home_5.txt home_6.txt home_7.txt /e/homework/ 
+выйти и сохранить: нажимаем esc :wq
+запускаем: sh script.sh ./script.sh
